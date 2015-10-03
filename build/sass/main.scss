@@ -1,0 +1,37 @@
+// Todos os codigos da pagina - SASS
+//coment
+//=====================================================================================================
+// =            Elementos completos da pagina                                                            =
+//=====================================================================================================*/
+
+//==========  Import  ==========/ 
+@import 'base/normalize.3.0.2';			//normalize 3.0.2
+@import "base/variaveis";                //variaveis 
+@import "base/mixins";                	//mixins
+@import "grid/base";                	//grid usado
+@import "theme/animacao";                	//grid usado
+
+ 
+//==========  Base  ==========
+
+body {
+  font-family: $tahoma;
+  font-size: 62.5%;         //css trick
+  background: #F7F5F3;
+  height: 100%;
+} 
+ 
+
+//========================================
+//  BASE
+//========================================
+
+
+#content {
+	background-color: white;
+}
+
+
+.animm {
+ 	@include animation('fadeIn 1s');
+ }

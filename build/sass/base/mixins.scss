@@ -1,0 +1,176 @@
+/*======================================================================================================
+=            borda arredondada            
+@include border-radius(10px 5px)
+======================================================================================================*/
+// Border Radius
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+     -moz-border-radius: $radius;
+      -ms-border-radius: $radius;
+          border-radius: $radius;
+}
+
+/*======================================================================================================
+=            drop shadow 
+@include box-shadow(0px 0px 10px black)          
+======================================================================================================*/
+// Drop shadows
+@mixin box-shadow ($shadow) {
+  -webkit-box-shadow: $shadow;
+     -moz-box-shadow: $shadow;
+          box-shadow: $shadow;
+}
+
+/*======================================================================================================
+=            gradient        
+@include linear-gradient(#000, #BADA55); // Stick in your favourite HEX colours   
+======================================================================================================*/
+@mixin linear-gradient($fromColor, $toColor) {
+  background-color: $toColor; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from($fromColor), to($toColor)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, $fromColor, $toColor); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image:    -moz-linear-gradient(top, $fromColor, $toColor); /* FF3.6 */
+  background-image:     -ms-linear-gradient(top, $fromColor, $toColor); /* IE10 */
+  background-image:      -o-linear-gradient(top, $fromColor, $toColor); /* Opera 11.10+ */
+  background-image:         linear-gradient(top, $fromColor, $toColor);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$fromColor}', EndColorStr='#{$toColor}');
+}
+
+
+/*======================================================================================================
+=            radial gradient       
+@include radial-gradient(#555A5F, #000); // Stick in your favourite HEX colours   
+======================================================================================================*/
+@mixin radial-gradient($from, $to) {
+  background: -moz-radial-gradient(center, circle cover, $from 0%, $to 100%);
+  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, $from), color-stop(100%, $to));
+  background: -webkit-radial-gradient(center, circle cover, $from 0%, $to 100%);
+  background: -o-radial-gradient(center, circle cover, $from 0%, $to 100%);
+  background: -ms-radial-gradient(center, circle cover, $from 0%, $to 100%);
+  background: radial-gradient(center, circle cover, $from 0%, $to 100%);
+  background-color: $from;
+}
+
+/*======================================================================================================
+=            transition 
+@include transition(background-color .3s) - @include box-shadow(all 1s ease)          
+======================================================================================================*/
+@mixin transition($transicao) {  
+  /* Firefox */
+  -moz-transition: $transicao;
+  /* WebKit */
+  -webkit-transition: $transicao;
+  /* Opera */
+  -o-transition: $transicao;
+  /* Standard */
+  transition: $transicao;
+}
+
+
+/*======================================================================================================
+=            transform 
+@include transform();          
+======================================================================================================*/
+
+// generic transform
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
+}
+
+/*======================================================================================================
+=            transform - rotate 
+@include rotate(45)        
+======================================================================================================*/
+@mixin rotate ($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+ 
+/*======================================================================================================
+=            transform - scale
+@include scale(4.5);          
+======================================================================================================*/
+@mixin scale($scale) {
+   @include transform(scale($scale));
+} 
+
+
+/*======================================================================================================
+=            transform - translate 
+@include translate(10px, 100px);          
+======================================================================================================*/
+@mixin translate ($x, $y) {
+   @include transform(translate($x, $y));
+}
+
+/*======================================================================================================
+=            transform - skew
+@include skew(1,2);          
+======================================================================================================*/
+@mixin skew ($x, $y) {
+   @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+/*======================================================================================================
+=            transform  - transform origin
+@include transform();          
+======================================================================================================*/
+@mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+       -o-transform-origin: $origin;
+      -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+          transform-origin: $origin;
+}
+
+
+/*======================================================================================================
+=            animacao - keyframes - criar keyframes
+@include keyframes(move-the-object) {
+  0%   { left: 100px; }
+  100% { left: 200px; }
+}         
+======================================================================================================*/
+@mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+        @content;
+    }
+    @-moz-keyframes #{$animationName} {
+        @content;
+    }
+    @-o-keyframes #{$animationName} {
+        @content;
+    }
+    @keyframes #{$animationName} {
+        @content;
+    }
+}
+
+/*======================================================================================================
+=            animacao - animation - aplicar animation
+.object-to-animate {
+  @include animation('move-the-object .5s 1', 'move-the-object-again .5s 1 .5s');
+}         
+======================================================================================================*/
+@mixin animation($animate...) {
+    $max: length($animate);
+    $animations: '';
+
+    @for $i from 1 through $max {
+        $animations: #{$animations + nth($animate, $i)};
+
+        @if $i < $max {
+            $animations: #{$animations + ", "};
+        }
+    }
+    -webkit-animation: $animations;
+    -moz-animation:    $animations;
+    -o-animation:      $animations;
+    animation:         $animations;
+}
+
+
+

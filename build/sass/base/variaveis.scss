@@ -1,0 +1,31 @@
+//======================================================================================================
+//=            MEDIA QUERIE            
+//======================================================================================================*/
+
+//  Media Querie
+// EXE: @media #{$mobile} { ... } 
+
+// ### MEDIA QUERIE
+$mobile:      "only screen and (max-width: 529px)";
+$tablet:      "only screen and (min-width: 530px) and (max-width: 949px)";
+$desktop:     "only screen and (min-width: 950px) and (max-width: 1128px)";
+$desktop-xl:  "only screen and (min-width: 1129px)";
+
+
+/*======================================================================================================
+=            TIPOGRAFIA            
+======================================================================================================*/
+$tahoma: "Tahoma", Verdana, Segoe, sans-serif;									//Tahoma
+$openSans: 	'Open Sans', sans-serif;					//Open Sans
+
+//basico
+$corFont: #1a2028;			//cor padrao de texto
+$black: #000;			    //preto
+$white: #fff;			    //branco
+
+//Cores temas
+$azulEscuroTexto: #2b4e7b;	//cor empresa
+
+
+
+
