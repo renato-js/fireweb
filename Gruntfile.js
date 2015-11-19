@@ -3,7 +3,7 @@
 
 	Github: renato-js
 	Twitter: @natojs
-	Date: 2014
+	Date: 2015
 	'Make the world better'
 
 =													  =
@@ -16,6 +16,7 @@
 - IMAGEM - imagemin
 - WATCH - watch (sass -> css / compile-minify css / uglify js)
 - HAML - compila HAML to HTML
+- BROWSER SYNC
 
 =====================================================*/
 
@@ -131,6 +132,18 @@ module.exports = function( grunt ) {
 	      }
 	   },
 
+	    browserSync: {
+	      dev: {
+	        bsFiles: {
+	          src: ['deploy/src/css/*.css', 'deploy/*.html']
+	        },
+	        options: {
+	          watchTask: true,
+	          server: './deploy/'
+	        }
+	      }
+	    },
+
 
 		//WATCH
 		//assiste as atualizacoes
@@ -144,6 +157,9 @@ module.exports = function( grunt ) {
 			jsFile: {
 			    files: ['build/js/main.js'],
 			    tasks: ['ug'],
+			},
+			options: {
+				spawn: false
 			}
 		}
 
@@ -158,6 +174,7 @@ module.exports = function( grunt ) {
 	grunt.registerTask( 'ls', [ 'less' ] );
 	grunt.registerTask( 'w', [ 'watch' ] );							//assiste 
 	grunt.registerTask('img', ['imagemin']);
+	grunt.registerTask('bsync', ['browserSync', 'watch']);
 
 	//para testes
 	grunt.registerTask( 'sa', [ 'scss','cssmin' ] );				//converte sass e junta com CSS gerado pelo LESS 
