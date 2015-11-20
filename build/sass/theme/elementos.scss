@@ -9,6 +9,12 @@
 =            TIPOGRAFIA PADRAO
 ======================================================================================================*/
 
+// efeito transicao background
+* { 
+  @include transition(background-color .3s);
+}
+
+
 p { 
   color: $corFont;
   font-size: 1.6em; 

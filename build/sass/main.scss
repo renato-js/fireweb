@@ -17,8 +17,9 @@
 body {
   font-family: $tahoma;
   font-size: 62.5%;         //css trick
-  background: #F7F5F3;
+  background: #1561C3;  
   height: 100%;
+  padding: 20px;
 } 
  
 
@@ -26,6 +27,9 @@ body {
 //  BASE
 //========================================
 
+p, h1 {
+	color: white;
+}
 
 #content {
 	background-color: white;

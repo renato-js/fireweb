@@ -4088,8 +4088,13 @@ th {
 body {
   font-family: "Tahoma", Verdana, Segoe, sans-serif;
   font-size: 62.5%;
-  background: #F7F5F3;
+  background: #1561C3;
   height: 100%;
+  padding: 20px;
+}
+
+p, h1 {
+  color: white;
 }
 
 #content {

@@ -472,6 +472,17 @@ th {
 /*======================================================================================================
 =            TIPOGRAFIA PADRAO
 ======================================================================================================*/
+* {
+  /* Firefox */
+  -moz-transition: background-color 0.3s;
+  /* WebKit */
+  -webkit-transition: background-color 0.3s;
+  /* Opera */
+  -o-transition: background-color 0.3s;
+  /* Standard */
+  transition: background-color 0.3s;
+}
+
 p {
   color: #1a2028;
   font-size: 1.6em;
