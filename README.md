@@ -1,4 +1,4 @@
-#Fireweb 5.2
+#Fireweb 5.9
 5.1 - animaDIV.js e checkpointjs.js
 5.2 - 12 columns grid system
 5.2.1 - readme
@@ -7,8 +7,8 @@
 
 Onweb Studio 2015
 
-@Alfie
-contato@onwebstudio.com.br
+@natojs
+renato@onwebstudio.com.br
 
 Estrutura:
 
